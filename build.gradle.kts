@@ -73,6 +73,8 @@ loom {
         vmArgs("-Dmixin.debug.export=true")
         runDir = "../../run"
     }
+
+    accessWidenerPath = project.rootProject.file("src/main/resources/aws/${stonecutter.current.project}.accesswidener")
 }
 
 java {
@@ -87,12 +89,14 @@ tasks.processResources {
     inputs.property("name", mod.name)
     inputs.property("version", mod.version)
     inputs.property("mcdep", mcDep)
+    inputs.property("minecraft_version", stonecutter.current.version.toString())
 
     val map = mapOf(
         "id" to mod.id,
         "name" to mod.name,
         "version" to mod.version,
-        "mcdep" to mcDep
+        "mcdep" to mcDep,
+        "minecraft_version" to stonecutter.current.version.toString()
     )
 
     filesMatching("fabric.mod.json") { expand(map) }

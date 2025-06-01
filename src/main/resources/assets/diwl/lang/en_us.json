@@ -1,0 +1,9 @@
+{
+  "key.diwl.do_toggle_whitelist": "Toggle Slot WhiteList",
+  "category.diwl.keybinds": "Destroy Item White List",
+
+  "diwl.category.general": "General",
+  "diwl.group.visibility": "Visibility",
+  "diwl.option.hide_while_bind_up": "Show While Bind Pressed",
+  "diwl.option.hide_while_bind_up.description": "Locked slots will only be shown when the \"Toggle Slot WhiteList\" key is pressed"
+}

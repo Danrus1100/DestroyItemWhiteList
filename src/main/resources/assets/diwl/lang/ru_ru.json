@@ -1,0 +1,9 @@
+{
+  "key.diwl.do_toggle_whitelist": "Добавить/убрать слот из Белого Списка",
+  "category.diwl.keybinds": "Destroy Item White List",
+
+  "diwl.category.general": "Основные",
+  "diwl.group.visibility": "Отображение",
+  "diwl.option.hide_while_bind_up": "Показывать только при бинде",
+  "diwl.option.hide_while_bind_up.description": "Заблокированные слоты будут показываться только при нажатии клавиши \"Добавить/убрать слот из Белого Списка\""
+}

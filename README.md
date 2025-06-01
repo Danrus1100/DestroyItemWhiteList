@@ -9,8 +9,8 @@ This is my template for client-side fabric mods. Be free to use
 4. Other features from [stonecutter-template-fabric](https://github.com/stonecutter-versioning/stonecutter-template-fabric)
 
 # What files need to be changed to start working on a mod:
- - [ ] settings.gradle.kts
- - [ ] gradle.properties
- - [ ] template/src/main/resources/fabric.mod.json
- - [ ] template/src/main/resources/template.mixins.json
- - [ ] and also names of packages in src/main
+ - [x] settings.gradle.kts
+ - [x] gradle.properties
+ - [x] template/src/main/resources/fabric.mod.json
+ - [x] template/src/main/resources/template.mixins.json
+ - [x] and also names of packages in src/main

@@ -1,7 +1,7 @@
-package com.example.config;
+package com.danrus.config;
 
-import com.example.TemplateMod;
-import com.example.config.categories.SimpleCategory;
+import com.danrus.DestroyItemWhiteList;
+import com.danrus.config.categories.SimpleCategory;
 import com.google.gson.GsonBuilder;
 import dev.isxander.yacl3.api.ConfigCategory;
 import dev.isxander.yacl3.api.YetAnotherConfigLib;
@@ -18,7 +18,7 @@ import java.util.List;
 public class ModConfig {
     public static final ConfigClassHandler<ModConfig> HANDLER = ConfigClassHandler.createBuilder(ModConfig.class)
             .serializer(config -> GsonConfigSerializerBuilder.create(config)
-                    .setPath(YACLPlatform.getConfigDir().resolve(TemplateMod.MOD_ID+".json5"))
+                    .setPath(YACLPlatform.getConfigDir().resolve(DestroyItemWhiteList.MOD_ID+".json5"))
                     .appendGsonBuilder(GsonBuilder::setPrettyPrinting)
                     .setJson5(true)
                     .build())
@@ -27,7 +27,9 @@ public class ModConfig {
     public static List<ConfigCategory> CATEGORIES = new ArrayList<>();
 
     @SerialEntry
-    public boolean myCoolBoolean = true;
+    public boolean hideWhileBindUp = false;
+
+
 
     public static Screen getConfigScreen(Screen parent) {
         return YetAnotherConfigLib.createBuilder()

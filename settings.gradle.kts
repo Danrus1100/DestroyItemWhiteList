@@ -20,4 +20,4 @@ stonecutter {
     create(rootProject)
 }
 
-rootProject.name = "Template"
+rootProject.name = "DestroyItemWhiteList"
