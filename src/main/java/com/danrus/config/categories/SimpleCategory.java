@@ -17,7 +17,7 @@ public class SimpleCategory {
                         .option(Option.<Boolean>createBuilder()
                                 .name(Text.translatable("diwl.option.hide_while_bind_up"))
                                 .binding(
-                                        true,
+                                        false,
                                         () -> ModConfig.get().hideWhileBindUp, // a getter to get the current value from
                                         newVal -> ModConfig.get().hideWhileBindUp = newVal
                                 )
@@ -26,6 +26,18 @@ public class SimpleCategory {
                                 ))
                                 .controller(TickBoxControllerBuilder::create)
                                 .build())
+//                        .option(Option.<Boolean>createBuilder()
+//                                .name(Text.translatable("diwl.option.show_when_destroy_item_hovered"))
+//                                .binding(
+//                                        false,
+//                                        () -> ModConfig.get().showWhenDIHoveredOnly,
+//                                        newVal -> ModConfig.get().showWhenDIHoveredOnly = newVal
+//                                )
+//                                .description(OptionDescription.of(
+//                                        Text.translatable("diwl.option.show_when_destroy_item_hovered.description")
+//                                ))
+//                                .controller(TickBoxControllerBuilder::create)
+//                                .build()) //TODO Check SlotsUtils.java:89
                         .build())
                 .build();
     }

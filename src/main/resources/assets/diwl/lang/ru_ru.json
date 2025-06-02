@@ -5,5 +5,7 @@
   "diwl.category.general": "Основные",
   "diwl.group.visibility": "Отображение",
   "diwl.option.hide_while_bind_up": "Показывать только при бинде",
-  "diwl.option.hide_while_bind_up.description": "Заблокированные слоты будут показываться только при нажатии клавиши \"Добавить/убрать слот из Белого Списка\""
+  "diwl.option.hide_while_bind_up.description": "Заблокированные слоты будут показываться только при нажатии клавиши \"Добавить/убрать слот из Белого Списка\"",
+  "diwl.option.show_when_destroy_item_hovered": "Строка 123",
+  "diwl.option.show_when_destroy_item_hovered.description": "Описание Строка 123"
 }

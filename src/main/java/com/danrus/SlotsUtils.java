@@ -1,5 +1,6 @@
 package com.danrus;
 
+import com.danrus.config.ModConfig;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -80,5 +81,11 @@ public class SlotsUtils {
 
     public static boolean shouldBeDeleted(int id) {
         return !whitelistedSlotIds.contains(id);
+    }
+
+    public static boolean shouldBeShowed() {
+//        boolean isSettingNotDefault = !ModConfig.get().showWhenDIHoveredOnly && !ModConfig.get().hideWhileBindUp;
+//        boolean isShowByBind = !ModConfig.get().hideWhileBindUp || (ModConfig.get().hideWhileBindUp && KeyBindsManager.isDoToggleWhiteListPressed);
+        return true; // TODO: im so confused. IDK how i can say my idea for people... And how to check conditions. Fuck
     }
 }

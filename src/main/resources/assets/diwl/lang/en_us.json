@@ -4,6 +4,8 @@
 
   "diwl.category.general": "General",
   "diwl.group.visibility": "Visibility",
-  "diwl.option.hide_while_bind_up": "Show While Bind Pressed",
-  "diwl.option.hide_while_bind_up.description": "Locked slots will only be shown when the \"Toggle Slot WhiteList\" key is pressed"
+  "diwl.option.hide_while_bind_up": "Show When Bind Pressed",
+  "diwl.option.hide_while_bind_up.description": "Locked slots will only be shown when the \"Toggle Slot WhiteList\" key is pressed",
+  "diwl.option.show_when_destroy_item_hovered": "Show When \"Destroy Item\" hovered",
+  "diwl.option.show_when_destroy_item_hovered.description": "Locked slots will only be shown when the mouse hovered on \"Destroy Item\" slot"
 }

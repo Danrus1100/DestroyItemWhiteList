@@ -29,6 +29,8 @@ public class ModConfig {
     @SerialEntry
     public boolean hideWhileBindUp = false;
 
+//    @SerialEntry
+//    public boolean showWhenDIHoveredOnly = false; //TODO Check SlotsUtils.java:89
 
 
     public static Screen getConfigScreen(Screen parent) {
