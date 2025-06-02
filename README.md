@@ -15,7 +15,8 @@
 </a></center</p>
 
 # Destroy Item White List (DIWL)
-**Prevents your selected items from being removed via "Destroy Item"**
+<img alt="icon" src="src/main/resources/assets/diwl/icon.png" width="125">
+<p><b>Prevents your selected items from being removed via "Destroy Item"</b></p>
 
 ## How to use:
 1. Select slots with LMB, holding < ` > (or < ~ > on your keyboard):
