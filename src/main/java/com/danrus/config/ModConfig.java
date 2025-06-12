@@ -27,23 +27,36 @@ public class ModConfig {
     public static List<ConfigCategory> CATEGORIES = new ArrayList<>();
 
     @SerialEntry
-    public boolean hideWhileBindUp = false;
+    public boolean hideWhiteListedSlots = false;
 
-//    @SerialEntry
-//    public boolean showWhenDIHoveredOnly = false; //TODO Check SlotsUtils.java:89
+    @SerialEntry
+    public boolean hideWhiteListedItems = false;
+
+    @SerialEntry
+    public boolean showWhenBindPressed = false;
+
+    @SerialEntry
+    public boolean showWhenDIHovered = false;
+
+    @SerialEntry
+    public int clicksForForceDelete = 5;
+
+    @SerialEntry
+    public int forceDeleteClickDelay = 5;
 
 
     public static Screen getConfigScreen(Screen parent) {
         return YetAnotherConfigLib.createBuilder()
-                .title(Text.literal("Template Mod Config"))
+                .title(Text.literal("Destroy Item White List"))
                 .categories(CATEGORIES)
+                .save(ModConfig::save)
                 .build()
                 .generateScreen(parent);
     }
 
     public static void initialize() {
-        CATEGORIES.add(SimpleCategory.get());
         load();
+        CATEGORIES.add(SimpleCategory.getCategory());
     }
 
     public static ModConfig get() {
