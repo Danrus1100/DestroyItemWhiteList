@@ -12,7 +12,7 @@
 </center>
 </p>
 <p><center><a href="https://discord.gg/sBpHZUBebQ"><img alt="discord-singular" height="40" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/compact/social/discord-singular_vector.svg">
-</a></center</p>
+</a></center></p>
 
 # Destroy Item White List (DIWL)
 <img alt="icon" src="src/main/resources/assets/diwl/icon.png" width="125">
