@@ -19,7 +19,7 @@
 <p><b>Prevents your selected items from being removed via "Destroy Item"</b></p>
 
 ## How to use:
-1. Select slots with LMB or Item with RMB, holding < ` > (or < ~ > on your keyboard):
+1. Select **slots** with LMB or **items** with RMB, holding < ` > (or < ~ > on your keyboard):
 ![demo2](assets/diwl_demo2.gif)
 2. Now when you click "Destroy Items" with holding SHIFT, the selected slots remain in place:
 ![demo1](assets/diwl_demo1.gif)
