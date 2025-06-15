@@ -14,7 +14,7 @@
     "issues": "https://discord.gg/Fkp9Tqmm6F"
   },
   "license": "CC0-1.0",
-  "icon": "assets/diwl/icon.png",
+  "icon": "assets/diwl/diwl_new_icon.png",
   "environment": "client",
   "accessWidener": "aws/${minecraft_version}.accesswidener",
   "entrypoints": {

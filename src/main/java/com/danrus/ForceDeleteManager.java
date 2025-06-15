@@ -1,4 +1,4 @@
-package com.danrus.slots;
+package com.danrus;
 
 import com.danrus.config.ModConfig;
 import net.minecraft.client.MinecraftClient;

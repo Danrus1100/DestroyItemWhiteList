@@ -1,12 +1,11 @@
 package com.danrus.mixin;
 
 import com.danrus.KeyBindsManager;
-import com.danrus.slots.ForceDeleteManager;
-import com.danrus.slots.SlotsUtils;
+import com.danrus.ForceDeleteManager;
+import com.danrus.utils.WhiteListUtils;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
-import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -40,11 +39,12 @@ public class CInventoryScreenMixin<T extends ScreenHandler> {
     )
     private void onSlotClickMixin(PlayerScreenHandler instance, int slotId, int button, SlotActionType slotActionType, PlayerEntity player, Operation<Void> original) {
         if (KeyBindsManager.isDoToggleWhiteListPressed) {
-            if (button == 0) {SlotsUtils.toggle(slotId);}
+            if (button == 0) {
+                WhiteListUtils.toggle(slotId);}
             else if (button == 1) {
                 Item item = instance.getSlot(slotId).getStack().getItem();
                 if (item != Items.AIR) {
-                    SlotsUtils.toggle(item);
+                    WhiteListUtils.toggle(item);
                 }
             }
         } else {
@@ -52,8 +52,8 @@ public class CInventoryScreenMixin<T extends ScreenHandler> {
         }
     }
 
-    //? if >=1.21 {
-    @WrapOperation(
+    //? if >=1.21.2 {
+    /*@WrapOperation(
             method = "onMouseClick",
             at = @At(
                     value = "INVOKE",
@@ -61,11 +61,11 @@ public class CInventoryScreenMixin<T extends ScreenHandler> {
             )
     )
     private void onSlotClickMixin2(Slot instance, ItemStack stack, Operation<Void> original) {
-        if (SlotsUtils.shouldBeDeleted(instance.getStack().getItem(), instance.id) || ForceDeleteManager.shouldBeForceDeleted()) {
+        if (WhiteListUtils.shouldBeDeleted(instance.getStack().getItem(), instance.id) || ForceDeleteManager.shouldBeForceDeleted()) {
             original.call(instance, stack);
         }
     }
-    //?}
+    *///?}
 
     @WrapOperation(
             method = "onMouseClick",
@@ -76,7 +76,7 @@ public class CInventoryScreenMixin<T extends ScreenHandler> {
 
     )
     private void onSlotClickMixin3(ClientPlayerInteractionManager instance, ItemStack stack, int slotId, Operation<Void> original) {
-        if (stack.isEmpty() && SlotsUtils.shouldBeDeleted(stack.getItem(),  slotId) || ForceDeleteManager.shouldBeForceDeleted()) {
+        if (stack.isEmpty() && WhiteListUtils.shouldBeDeleted(stack.getItem(),  slotId) || ForceDeleteManager.shouldBeForceDeleted()) {
             original.call(instance, stack, slotId);
         }
     }

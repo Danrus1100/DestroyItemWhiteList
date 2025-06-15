@@ -5,10 +5,12 @@ import dev.isxander.yacl3.api.ConfigCategory;
 import dev.isxander.yacl3.api.Option;
 import dev.isxander.yacl3.api.OptionDescription;
 import dev.isxander.yacl3.api.OptionGroup;
+import dev.isxander.yacl3.api.controller.IntegerFieldControllerBuilder;
 import dev.isxander.yacl3.api.controller.IntegerSliderControllerBuilder;
 import dev.isxander.yacl3.api.controller.SliderControllerBuilder;
 import dev.isxander.yacl3.api.controller.TickBoxControllerBuilder;
 import dev.isxander.yacl3.gui.controllers.slider.IntegerSliderController;
+import dev.isxander.yacl3.gui.controllers.string.number.IntegerFieldController;
 import net.minecraft.text.Text;
 
 public class SimpleCategory {
@@ -75,14 +77,20 @@ public class SimpleCategory {
                                         () -> ModConfig.get().clicksForForceDelete, // a getter to getCategory the current value from
                                         newVal -> ModConfig.get().clicksForForceDelete = newVal
                                 )
-                                .controller(opt -> IntegerSliderControllerBuilder.create(opt)
-                                        .range(1, 10)
-                                        .step(1)
-                                        .formatValue(val -> Text.translatable("diwl.option.clicks_for_force_delete."+val)))
-                                .addListener(((option, event) -> {
-                                    ModConfig.get().clicksForForceDelete = option.pendingValue();
-                                    ModConfig.save();
-                                }))
+//                                .controller(opt -> IntegerSliderControllerBuilder.create(opt)
+//                                        .range(1, 10)
+//                                        .step(1)
+//                                        .formatValue(val -> Text.translatable("diwl.option.clicks_for_force_delete."+val)))
+//                                .addListener(((option, event) -> {
+//                                    ModConfig.get().clicksForForceDelete = option.pendingValue();
+//                                    ModConfig.save();
+//                                }))
+//                                .controller(opt -> IntegerFieldController(opt, 1, 10, val -> Text.translatable("diwl.option.clicks_for_force_delete."+val))
+                                .controller(opt -> IntegerFieldControllerBuilder.create(opt)
+                                        .min(1)
+                                        .max(10)
+                                        .formatValue(val -> Text.translatable("diwl.option.clicks_for_force_delete."+val))
+                                )
                                 .description(OptionDescription.of(
                                         Text.translatable("diwl.option.clicks_for_force_delete.description")
                                 ))
@@ -94,14 +102,19 @@ public class SimpleCategory {
                                         () -> ModConfig.get().forceDeleteClickDelay, // a getter to getCategory the current value from
                                         newVal -> ModConfig.get().forceDeleteClickDelay = newVal
                                 )
-                                .controller(opt -> IntegerSliderControllerBuilder.create(opt)
-                                        .range(1, 20)
-                                        .step(1)
-                                        .formatValue(val -> Text.translatable("diwl.option.force_delete_clicks_delay."+val)))
-                                .addListener(((option, event) -> {
-                                    ModConfig.get().forceDeleteClickDelay = option.pendingValue();
-                                    ModConfig.save();
-                                }))
+//                                .controller(opt -> IntegerSliderControllerBuilder.create(opt)
+//                                        .range(1, 20)
+//                                        .step(1)
+//                                        .formatValue(val -> Text.translatable("diwl.option.force_delete_clicks_delay."+val)))
+//                                .addListener(((option, event) -> {
+//                                    ModConfig.get().forceDeleteClickDelay = option.pendingValue();
+//                                    ModConfig.save();
+//                                }))
+                                .controller(opt -> IntegerFieldControllerBuilder.create(opt)
+                                        .min(1)
+                                        .max(20)
+                                        .formatValue(val -> Text.translatable("diwl.option.force_delete_clicks_delay."+val))
+                                )
                                 .description(OptionDescription.of(
                                         Text.translatable("diwl.option.force_delete_clicks_delay.description")
                                 ))

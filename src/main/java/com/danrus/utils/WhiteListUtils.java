@@ -1,4 +1,4 @@
-package com.danrus.slots;
+package com.danrus.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -17,7 +17,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.lang.reflect.Type;
 
-public class SlotsUtils {
+public class WhiteListUtils {
 
     public static Set<Integer> whitelistedSlotIds;
     
