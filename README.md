@@ -15,7 +15,7 @@
 </a></center></p>
 
 # Destroy Item White List (DIWL)
-<img alt="icon" src="src/main/resources/assets/diwl/icon.png" width="125">
+<img alt="icon" src="src/main/resources/assets/diwl/diwl_new_icon.png" width="125">
 <p><b>Prevents your selected items from being removed via "Destroy Item"</b></p>
 
 ## How to use:
