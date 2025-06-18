@@ -21,9 +21,10 @@ public class HandledScreenMixin {
 
     @Inject(
             method = "drawSlot",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/client/util/math/MatrixStack;pop()V")
+//            at = @At(
+//                    value = "INVOKE",
+//                    target = "Lnet/minecraft/client/util/math/MatrixStack;pop()V")
+            at = @At("TAIL")
     )
     private void drawSlotMixin(DrawContext context, Slot slot, CallbackInfo ci) {
         if (slot instanceof CreativeSlot creativeSlot) {

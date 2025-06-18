@@ -53,7 +53,7 @@ public class CInventoryScreenMixin<T extends ScreenHandler> {
     }
 
     //? if >=1.21.2 {
-    /*@WrapOperation(
+    @WrapOperation(
             method = "onMouseClick",
             at = @At(
                     value = "INVOKE",
@@ -65,7 +65,7 @@ public class CInventoryScreenMixin<T extends ScreenHandler> {
             original.call(instance, stack);
         }
     }
-    *///?}
+    //?}
 
     @WrapOperation(
             method = "onMouseClick",
