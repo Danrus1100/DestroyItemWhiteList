@@ -1,39 +1,35 @@
 package com.danrus;
 
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import com.danrus.utils.KeyMapsUtils;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.fabricmc.fabric.api.client.screen.v1.ScreenEvents;
 import net.fabricmc.fabric.api.client.screen.v1.ScreenKeyboardEvents;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
-import net.minecraft.client.option.KeyBinding;
-import net.minecraft.client.util.InputUtil;
+import net.minecraft.client.KeyMapping;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
 import org.lwjgl.glfw.GLFW;
 
 public class KeyBindsManager {
-    public static KeyBinding doToggleWhiteList;
+    public static KeyMapping doToggleWhiteList;
     public static boolean isDoToggleWhiteListPressed = false;
 
     public static void register() {
-        doToggleWhiteList = new KeyBinding(
+        doToggleWhiteList = KeyMapsUtils.create(
                 "key.diwl.do_toggle_whitelist",
-                InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_GRAVE_ACCENT,
-                "category.diwl.keybinds"
+                GLFW.GLFW_KEY_GRAVE_ACCENT
         );
         KeyBindingHelper.registerKeyBinding(doToggleWhiteList);
     }
 
-    public static void handle(MinecraftClient mc) {
+    public static void handle(Minecraft mc) {
 
-        if (mc.currentScreen instanceof CreativeInventoryScreen) {
-            ScreenKeyboardEvents.afterKeyPress(mc.currentScreen).register((screen, keyCode, scanCode, modifiers) -> {
-                if (doToggleWhiteList.matchesKey(keyCode, scanCode)) {
+        if (mc.screen != null) {
+            KeyMapsUtils.registerAfterPress(mc.screen, (event) -> {
+                if (KeyMapsUtils.matches(doToggleWhiteList, event)) {
                     isDoToggleWhiteListPressed = true;
                 }
             });
-            ScreenKeyboardEvents.afterKeyRelease(mc.currentScreen).register((screen, keyCode, scanCode, modifiers) -> {
-                if (doToggleWhiteList.matchesKey(keyCode, scanCode)) {
+            KeyMapsUtils.registerAfterRelease(mc.screen, (event) -> {
+                if (KeyMapsUtils.matches(doToggleWhiteList, event)) {
                     isDoToggleWhiteListPressed = false;
                 }
             });

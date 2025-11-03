@@ -4,9 +4,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.screen.ingame.CreativeInventoryScreen;
-import net.minecraft.item.Item;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
+import net.minecraft.world.item.Item;
 
 import java.io.File;
 import java.io.FileReader;
@@ -153,8 +153,8 @@ public class WhiteListUtils {
     }
 
     public static boolean isDestroyItemSlotFocused() {
-        if (MinecraftClient.getInstance().currentScreen instanceof CreativeInventoryScreen ciScreen) {
-            return ciScreen.focusedSlot == ciScreen.deleteItemSlot;
+        if (Minecraft.getInstance().screen instanceof CreativeModeInventoryScreen ciScreen) {
+            return ciScreen.hoveredSlot == ciScreen.destroyItemSlot;
         }
         return false;
     }

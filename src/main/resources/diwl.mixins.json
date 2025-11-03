@@ -3,12 +3,13 @@
   "package": "com.danrus.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "AbstractContainerMenuMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "client": [
-    "CInventoryScreenMixin",
-    "HandledScreenMixin"
+    "AbstractContainerScreenMixin",
+    "CreativeModeInventoryScreenMixin"
   ]
 }

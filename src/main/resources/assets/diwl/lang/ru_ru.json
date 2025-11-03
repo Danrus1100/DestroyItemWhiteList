@@ -1,6 +1,6 @@
 {
   "key.diwl.do_toggle_whitelist": "Добавить/убрать слот из Белого Списка",
-  "category.diwl.keybinds": "Destroy Item White List",
+  "key.category.diwl.keybinds": "Destroy Item White List",
 
 
   "diwl.category.general": "Основные",

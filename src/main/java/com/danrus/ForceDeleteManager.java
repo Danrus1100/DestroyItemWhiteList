@@ -1,7 +1,7 @@
 package com.danrus;
 
 import com.danrus.config.ModConfig;
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.Minecraft;
 
 public class ForceDeleteManager {
 
@@ -23,7 +23,7 @@ public class ForceDeleteManager {
         return INSTANCE.clicks > ModConfig.get().clicksForForceDelete - 1 && INSTANCE.ticks > 0;
     }
 
-    public static void tick(MinecraftClient mc) {
+    public static void tick(Minecraft mc) {
         INSTANCE.tick();
     }
 

@@ -9,8 +9,8 @@ import dev.isxander.yacl3.config.v2.api.ConfigClassHandler;
 import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
 import dev.isxander.yacl3.platform.YACLPlatform;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.text.Text;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +47,7 @@ public class ModConfig {
 
     public static Screen getConfigScreen(Screen parent) {
         return YetAnotherConfigLib.createBuilder()
-                .title(Text.literal("Destroy Item White List"))
+                .title(Component.literal("Destroy Item White List"))
                 .categories(CATEGORIES)
                 .save(ModConfig::save)
                 .build()

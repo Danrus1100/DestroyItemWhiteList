@@ -39,12 +39,17 @@ repositories {
         name = "Xander Maven"
     }
     maven("https://maven.nucleoid.xyz/") { name = "Nucleoid" }
+    maven("https://maven.parchmentmc.org")
     mavenCentral()
 }
 
 dependencies {
     minecraft("com.mojang:minecraft:$mcVersion")
-    mappings("net.fabricmc:yarn:$mcVersion+build.${deps["yarn_build"]}:v2")
+//    mappings("net.fabricmc:yarn:$mcVersion+build.${deps["yarn_build"]}:v2")
+    mappings(loom.layered {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-$mcVersion:${deps["parchment"]}@zip")
+    })
     modImplementation("net.fabricmc:fabric-loader:${deps["fabric_loader"]}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${deps["fabric_api"]}")
 

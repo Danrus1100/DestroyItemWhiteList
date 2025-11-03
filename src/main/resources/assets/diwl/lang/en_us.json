@@ -1,6 +1,6 @@
 {
   "key.diwl.do_toggle_whitelist": "Toggle Slot WhiteList",
-  "category.diwl.keybinds": "Destroy Item White List",
+  "key.category.diwl.keybinds": "Destroy Item White List",
 
 
   "diwl.category.general": "General",
